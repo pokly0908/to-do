@@ -1,4 +1,4 @@
-package com.sparta.todo.entity;
+package com.sparta.todo.Entity;
 
 
 import jakarta.persistence.Column;
@@ -11,28 +11,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
-@NoArgsConstructor
 @Entity
-@Table(name = "USERS")
+@Table(name = "USER")
+@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
-    @Column(nullable = false, unique = true, length = 16)
-    private String nickname;
-
-    @Column(nullable = false)
-    private String email;
+    @Column(nullable = false, unique = true)
+    private String username;
 
     @Column(nullable = false)
     private String password;
 
-    public User(String nickname, String email, String password) {
-        this.nickname = nickname;
-        this.email = email;
+    public User(String username, String password){
+        this.username = username;
         this.password = password;
     }
 }
-
-
