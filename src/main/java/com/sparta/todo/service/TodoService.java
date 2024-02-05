@@ -22,7 +22,7 @@ import org.springframework.stereotype.Service;
 public class TodoService {
 
     private final TodoRepository todoRepository;
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
     public TodoResponseDto readTodo(Long todoId) {
         Todo todo = todoRepository.findById(todoId).orElseThrow(
             () -> new IllegalArgumentException("메모가 없습니다.")

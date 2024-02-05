@@ -24,7 +24,6 @@ public class TodoController {
 
     private final TodoService todoService;
 
-    //메모 생성
     @PostMapping("/create")
     public TodoResponseDto createTodo(@Valid @RequestBody TodoRequestDto todoRequestDto, @AuthenticationPrincipal
         UserDetailsImpl userDetail){

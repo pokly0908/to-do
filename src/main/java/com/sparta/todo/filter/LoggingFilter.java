@@ -10,7 +10,7 @@ import java.io.IOException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.annotation.Order;
 
-@Slf4j(topic = "LoggingFilter")
+@Slf4j(topic = "FILTER1")
 @Order(1)
 public class LoggingFilter implements Filter {
 
@@ -18,14 +18,13 @@ public class LoggingFilter implements Filter {
     public void doFilter(
         ServletRequest request, ServletResponse response, FilterChain chain)
         throws IOException, ServletException {
-        // 전처리
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         String url = httpServletRequest.getRequestURI();
         log.info(url);
 
-        chain.doFilter(request, response); // 다음 Filter 로 이동
+        chain.doFilter(request, response);
 
         // 후처리
-        log.info("비즈니스 로직 완료");
+        log.info("GOOD");
     }
 }
