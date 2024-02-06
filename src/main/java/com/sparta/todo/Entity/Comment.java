@@ -31,7 +31,7 @@ public class Comment {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "scheduleId")
+    @JoinColumn(name = "todoId")
     private Todo todo;
 
     public Comment(CommentRequestDto commentRequestDto, Todo todo, User user) {
