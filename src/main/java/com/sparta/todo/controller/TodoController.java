@@ -47,17 +47,17 @@ public class TodoController {
     public TodoResponseDto updateSchedule(@PathVariable Long todoId,
         @Valid @RequestBody TodoRequestDto todoRequestDto,
         @AuthenticationPrincipal UserDetailsImpl userDetails) {
-        TodoResponseDto scheduleResponseDto = todoService.updateTodo(todoId,
+        TodoResponseDto todoResponseDto = todoService.updateTodo(todoId,
             todoRequestDto, userDetails);
-        return scheduleResponseDto;
+        return todoResponseDto;
     }
 
     @PatchMapping("/{todoId}/complete")
     public TodoResponseDto completeSchedule(@PathVariable Long todoId,
         @AuthenticationPrincipal UserDetailsImpl userDetails) {
-        TodoResponseDto scheduleResponseDto = todoService.completeTodo(todoId,
+        TodoResponseDto todoResponseDto = todoService.completeTodo(todoId,
             userDetails);
-        return scheduleResponseDto;
+        return todoResponseDto;
     }
 
 }

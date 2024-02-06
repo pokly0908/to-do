@@ -9,14 +9,14 @@ import lombok.Getter;
 @Getter
 public class TodoListResponseDto {
 
-    private Map<String, List<TodoResponseDto>> scheduleByName;
+    private Map<String, List<TodoResponseDto>> TodoByName;
 
-    public TodoListResponseDto(Map<String, List<TodoResponseDto>> scheduleByName) {
-        this.scheduleByName = scheduleByName.entrySet().stream()
+    public TodoListResponseDto(Map<String, List<TodoResponseDto>> TodoByName) {
+        this.TodoByName = TodoByName.entrySet().stream()
             .collect(Collectors.toMap(
                 Map.Entry::getKey,
                 entry -> entry.getValue().stream()
-                    .map(scheduleResponseDto -> new TodoResponseDto(scheduleResponseDto))
+                    .map(todoResponseDto -> new TodoResponseDto(todoResponseDto))
                     .collect(Collectors.toList())
             ));
     }

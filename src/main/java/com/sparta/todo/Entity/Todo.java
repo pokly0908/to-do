@@ -47,7 +47,7 @@ public class Todo {
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "scheduleId")
+    @JoinColumn(name = "todoId")
     private List<Comment> comments = new ArrayList<>();
 
     public Todo(String title, String content, User user) {
