@@ -34,6 +34,7 @@ public class Comment {
     @JoinColumn(name = "todoId")
     private Todo todo;
 
+
     public Comment(CommentRequestDto commentRequestDto, Todo todo, User user) {
         this.comment = commentRequestDto.getComment();
         this.todo = todo;

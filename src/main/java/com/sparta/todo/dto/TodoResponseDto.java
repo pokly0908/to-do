@@ -1,7 +1,9 @@
 package com.sparta.todo.dto;
 
+import com.sparta.todo.Entity.Comment;
 import com.sparta.todo.Entity.Todo;
 import java.time.LocalDateTime;
+import java.util.List;
 import lombok.Getter;
 
 @Getter
